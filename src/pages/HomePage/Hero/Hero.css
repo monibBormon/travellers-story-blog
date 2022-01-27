@@ -1,0 +1,13 @@
+.slick-slide div {
+    outline: none;
+   }
+.slick-dots li.slick-active button::before{
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    opacity: 1;
+}
+.slick-dots li button::before{
+    color: rgb(138, 126, 126);
+    opacity: .6;
+    font-size: 10px;
+}
