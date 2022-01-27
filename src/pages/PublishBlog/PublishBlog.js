@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import useFirebase from '../../hooks/useFirebase';
 
 
 const PublishBlog = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [imageLoading, setimageLoading] = useState(false);
+    const { user } = useFirebase()
 
     const onSubmit = data => {
 
@@ -27,7 +29,7 @@ const PublishBlog = () => {
                         data.image = imgUrl
                         //set blog status
                         data.status = "pending";
-                        console.log(data.image)
+                        data.email = user.email;
                         fetch("http://localhost:5000/blogs", {
                             method: "POST",
                             headers: { "content-type": "application/json" },
@@ -49,8 +51,8 @@ const PublishBlog = () => {
     }
     return (
         <div>
-            <div className="container mx-auto py-14">
-                <div className="grid grid-cols-2 gap-4">
+            <div className="container mx-auto py-14 px-5 lg:px-0">
+                <div className="w-full lg:w-1/2 mx-auto">
                     <div className="publish-blog">
                         <h2 className='text-4xl mb-8'>Publish Your own blog</h2>
                         <div className="form">

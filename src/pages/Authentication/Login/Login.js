@@ -14,8 +14,8 @@ const Login = () => {
         loginUser(data.email, data.password, location, navigate)
     }
     return (
-        <div className='py-14'>
-            <div className="login-form w-1/2 mx-auto">
+        <div className='py-14 px-5 lg:px-0'>
+            <div className="login-form w-full lg:w-1/2 mx-auto">
                 <h2 className='text-center mb-8 text-4xl'>Please Login</h2>
                 <div className="form">
                     <form onSubmit={handleSubmit(onSubmit)}>

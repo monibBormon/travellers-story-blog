@@ -7,7 +7,7 @@ import useFirebase from '../../../hooks/useFirebase';
 
 
 const Header = () => {
-    const { user, logOut } = useFirebase();
+    const { user, logOut, admin } = useFirebase();
     return (
         <div>
             <div className="min-h-full">
@@ -24,8 +24,14 @@ const Header = () => {
                                     <div className="hidden md:block text-right">
                                         <div className="ml-10 space-x-4">
                                             <NavLink className='text-white font-semibold hover:text-red-400 duration-300' to='/'>Home</NavLink>
+                                            <NavLink className='text-white font-semibold hover:text-red-400 duration-300' to='/blogs'>Blogs</NavLink>
                                             <NavLink className='text-white font-semibold hover:text-red-400 duration-300' to='/publish-blog'>Publish Blog</NavLink>
-                                            {user.email ? <Link to={'/'}><span onClick={logOut} className='text-white'>Log Out</span></Link> : <NavLink className='text-white font-semibold hover:text-red-400 duration-300' to='/login'>Login</NavLink>}
+                                            {user.email ? <div className='inline-block'>
+                                                {admin ? <div className='inline-block'>
+                                                    <NavLink className='text-white font-semibold hover:text-red-400 duration-300 mr-2' to='/manage-blogs'>Manage Blogs</NavLink>
+                                                    <NavLink className='text-white font-semibold hover:text-red-400 duration-300 mr-2' to='/make-admin'>Make Admin</NavLink>
+                                                </div> : <NavLink className='text-white font-semibold hover:text-red-400 duration-300 mr-2' to='/my-blogs'>My Blogs</NavLink>}
+                                                <Link to={'/'}><span onClick={logOut} className='text-white'>Log Out</span></Link></div> : <NavLink className='text-white font-semibold hover:text-red-400 duration-300' to='/login'>Login</NavLink>}
                                         </div>
                                     </div>
                                     <div className="-mr-2 flex justify-end md:hidden">
@@ -44,9 +50,15 @@ const Header = () => {
 
                             <Disclosure.Panel className="md:hidden">
                                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                                    <NavLink className='text-white font-semibold hover:text-red-400 duration-300' to='/'>Home</NavLink>
-                                    <NavLink className='text-white font-semibold hover:text-red-400 duration-300' to='/publish-blog'>Publish Blog</NavLink>
-                                    <NavLink className='text-white font-semibold hover:text-red-400 duration-300' to='/login'>Login</NavLink>
+                                    <NavLink className='text-white font-semibold hover:text-red-400 duration-300 block' to='/'>Home</NavLink>
+                                    <NavLink className='text-white font-semibold hover:text-red-400 duration-300 block' to='/Blogs'>Blogs</NavLink>
+                                    <NavLink className='text-white font-semibold hover:text-red-400 duration-300 block' to='/publish-blog'>Publish Blog</NavLink>
+                                    {user.email ? <div className='inline-block'>
+                                        {admin ? <div className='inline-block'>
+                                            <NavLink className='text-white font-semibold hover:text-red-400 duration-300 block' to='/manage-blogs'>Manage Blogs</NavLink>
+                                            <NavLink className='text-white font-semibold hover:text-red-400 duration-300 block' to='/make-admin'>Make Admin</NavLink>
+                                        </div> : <NavLink className='text-white font-semibold hover:text-red-400 duration-300 block' to='/my-blogs'>My Blogs</NavLink>}
+                                        <Link to={'/'}><span onClick={logOut} className='text-white'>Log Out</span></Link></div> : <NavLink className='text-white font-semibold hover:text-red-400 duration-300 block' to='/login'>Login</NavLink>}
                                 </div>
                             </Disclosure.Panel>
                         </>

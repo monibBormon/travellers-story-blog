@@ -19,8 +19,8 @@ const MakeAdmin = () => {
             })
     }
     return (
-        <div className='py-14'>
-            <div className='w-1/2 mx-auto'>
+        <div className='py-14 px-5 lg:px-0'>
+            <div className='w-full lg:w-1/2 mx-auto'>
                 <h2 className='text-2xl mb-8 font-semibold text-center'>Make Admin</h2>
                 {success && <p className='my-2'>Admin added successfully</p>}
                 <form onSubmit={handleSubmit(onSubmit)}>

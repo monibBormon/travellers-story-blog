@@ -12,10 +12,10 @@ const HomeBlogs = () => {
     }, [])
     return (
         <div>
-            <div className="container mx-auto pt-8 pb-20">
-                <div className="grid grid-cols-3 gap-4">
+            <div className="container mx-auto pt-8 pb-20 px-5 lg:px-0">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                     <div className="col-span-2">
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {
                                 blogs.map(blog => <div key={blog._id} className="single-blog shadow-lg">
                                     <div className="blog-img">
@@ -34,7 +34,7 @@ const HomeBlogs = () => {
                             }
                         </div>
                     </div>
-                    <div className="sidebar">
+                    <div className="sidebar hidden lg:block">
                         <h2>SideBar</h2>
                     </div>
                 </div>
