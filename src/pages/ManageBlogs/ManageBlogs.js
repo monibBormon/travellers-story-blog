@@ -6,7 +6,7 @@ const ManageBlogs = () => {
 
     console.log(blogs)
     useEffect(() => {
-        fetch("http://localhost:5000/all-blogs")
+        fetch("https://gentle-brook-35014.herokuapp.com/all-blogs")
             .then(res => res.json())
             .then(data => {
                 setBlogs(data)
@@ -16,7 +16,7 @@ const ManageBlogs = () => {
     const handleStatus = (id) => {
         const confirmation = window.confirm('Are you sure you want to update status?')
         if (confirmation) {
-            fetch(`http://localhost:5000/updateStatus/${id}`, {
+            fetch(`https://gentle-brook-35014.herokuapp.com/updateStatus/${id}`, {
                 method: 'PUT',
                 headers: { 'content-type': 'application/json' }
             }).then(res => res.json())
@@ -34,7 +34,7 @@ const ManageBlogs = () => {
     const handleStatus1 = (id) => {
         const confirmation = window.confirm('Are you sure you want to update status?')
         if (confirmation) {
-            fetch(`http://localhost:5000/updateStatus1/${id}`, {
+            fetch(`https://gentle-brook-35014.herokuapp.com/updateStatus1/${id}`, {
                 method: 'PUT',
                 headers: { 'content-type': 'application/json' }
             }).then(res => res.json())
@@ -54,7 +54,7 @@ const ManageBlogs = () => {
     const handleDelete = (id) => {
         const confirmation = window.confirm('Are you sure product will be delete parmanently?')
         if (confirmation) {
-            fetch(`http://localhost:5000/delete/${id}`, {
+            fetch(`https://gentle-brook-35014.herokuapp.com/delete/${id}`, {
                 method: 'DELETE',
                 headers: { 'content-type': 'application/json' }
             }).then(res => res.json())

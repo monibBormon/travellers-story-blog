@@ -30,7 +30,7 @@ const PublishBlog = () => {
                         //set blog status
                         data.status = "pending";
                         data.email = user.email;
-                        fetch("http://localhost:5000/blogs", {
+                        fetch("https://gentle-brook-35014.herokuapp.com/blogs", {
                             method: "POST",
                             headers: { "content-type": "application/json" },
                             body: JSON.stringify(data)
