@@ -4,7 +4,9 @@ import Login from './pages/Authentication/Login/Login';
 import MakeAdmin from './pages/Authentication/MakeAdmin/MakeAdmin';
 import Register from './pages/Authentication/Register/Register';
 import Home from './pages/HomePage/Home/Home';
+import BlogDetails from './pages/HomePage/HomeBlogs/BlogDetails';
 import NotFound from './pages/NotFound/NotFound';
+import PublishBlog from './pages/PublishBlog/PublishBlog';
 import Header from './pages/Shared/Header/Header';
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/make-admin' element={<MakeAdmin />} />
+          <Route path='/blog-details/:id' element={<BlogDetails />} />
+          <Route path='/publish-blog' element={<PublishBlog />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
