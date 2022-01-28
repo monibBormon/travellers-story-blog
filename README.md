@@ -4,6 +4,8 @@ Live Link: https://travellers-story.web.app/
 
 Server Side Code: https://github.com/monibBormon/travellers-story-server
 
+Admin Login Email: test@test.com , Admin Login Password: #2021dev
+
 ## Features of this website
 
 * Login Authentication with firebase
