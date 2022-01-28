@@ -34,7 +34,7 @@ function App() {
             <Route path='/update/:id' element={<AdminRoute><UpdateBlog /></AdminRoute>} />
             <Route path='/my-blogs' element={<MyBlogs />} />
             <Route path='/make-admin' element={<AdminRoute><MakeAdmin /></AdminRoute>} />
-            <Route path='/blog-details/:id' element={<BlogDetails />} />
+            <Route path='/blog-details/:id' element={<PrivateRoute><BlogDetails /></PrivateRoute>} />
             <Route path='/publish-blog' element={<PrivateRoute><PublishBlog /></PrivateRoute>} />
             <Route path='*' element={<NotFound />} />
           </Routes>

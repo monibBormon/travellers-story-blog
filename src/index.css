@@ -9,6 +9,6 @@ body {
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
 }
-.header-bottom h2{
+.logo, .header-bottom h2{
     font-family: 'Satisfy', cursive;
 }

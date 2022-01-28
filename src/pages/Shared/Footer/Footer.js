@@ -41,7 +41,7 @@ const Footer = () => {
                         <button className='mt-5 bg-blue-500 text-white px-10 py-2'>Subscribe</button>
                     </div>
                 </div>
-                <h2 className='pt-2 text-center'>All right reserved to &copy; Travellers Story 2022</h2>
+                <h2 className='pt-6 text-center'>All right reserved to &copy; Travellers Story 2022</h2>
             </div>
         </div>
     );

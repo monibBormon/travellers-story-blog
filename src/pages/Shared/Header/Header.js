@@ -11,14 +11,14 @@ const Header = () => {
     return (
         <div>
             <div className="min-h-full">
-                <Disclosure as="nav" className="bg-gray-800">
+                <Disclosure as="nav" className="bg-gray-700">
                     {({ open }) => (
                         <>
                             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                                 <div className="grid grid-cols-2 gap-4 items-center py-5">
                                     <div className="flex-shrink-0">
                                         <Link to='/'>
-                                            <h2 className='text-red-400 font-semibold text-2xl capitalize'>TS.</h2>
+                                            <h2 className='text-blue-400 logo font-semibold text-2xl capitalize'>Traveller.</h2>
                                         </Link>
                                     </div>
                                     <div className="hidden md:block text-right">
