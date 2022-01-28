@@ -47,11 +47,3 @@ function App() {
 
 export default App;
 
-
-
-
-
-
-
-/* 
-It was really a bad news for me. Actually I don't know PHP. But if you give more time then it can be easy to learn. You know that, you will never learn a language within two or three days. You will only learn the basics in the period of time. I started my office from 12th January and I learned a lot of things that will help me further. One request to you that if you give me any certification or any document about the internship it will be a great help to start my career.  You can give me any position like front-end developer from your UK or BD company. After learning PHP can I join to your company again?  */

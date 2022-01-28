@@ -21,7 +21,7 @@ const BlogDetails = () => {
                 <div className="grid grid-cols-3 gap-4">
                     <div className="col-span-2">
                         <div className="blog-details">
-                            <div className="blog-image">
+                            <div className="blog-image overflow-hidden">
                                 <img src={blog.image} alt="blog-bg" />
                             </div>
                             <div className="blog-text">
