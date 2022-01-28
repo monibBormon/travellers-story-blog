@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const BlogDetails = () => {
     const { id } = useParams()
@@ -34,6 +34,9 @@ const BlogDetails = () => {
                                 <p className=''>{blog.body}</p>
                             </div>
                         </div>
+                        <Link to={'/blogs'}>
+                            <button className='text-white bg-blue-500 px-14 py-3 rounded mt-8'>Back to Blogs</button>
+                        </Link>
                     </div>
                 </div>
             </div>

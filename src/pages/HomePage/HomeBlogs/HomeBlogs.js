@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './HomeBlogs.css'
+import SideBar from './SideBar';
 
 const HomeBlogs = () => {
     const [blogs, setBlogs] = useState([])
@@ -50,6 +51,16 @@ const HomeBlogs = () => {
                     </div>
                     <div className="sidebar hidden lg:block px-10">
                         <h2 className='text-3xl mb-5'>Popular Blogs</h2>
+                        {
+                            blogs.slice(5, 10).map(blog => <SideBar key={blog._id} blog={blog} />)
+                        }
+                        <div className='mt-10 text-2xl'>
+                            <h4>Share Blogs</h4>
+                            <span className='w-12 h-1 bg-blue-500 block mb-5'></span>
+                            <i class="fab fa-facebook mr-3 bg-white text-black shadow-xl cursor-pointer p-1"></i>
+                            <i class="fab fa-google mr-3 bg-white text-black shadow-xl cursor-pointer p-1"></i>
+                            <i class="fab fa-twitter mr-3 bg-white text-black shadow-xl cursor-pointer p-1"></i>
+                        </div>
                     </div>
                 </div>
             </div>

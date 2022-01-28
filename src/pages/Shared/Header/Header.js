@@ -58,7 +58,7 @@ const Header = () => {
                                             <NavLink className='text-white font-semibold hover:text-red-400 duration-300 block' to='/manage-blogs'>Manage Blogs</NavLink>
                                             <NavLink className='text-white font-semibold hover:text-red-400 duration-300 block' to='/make-admin'>Make Admin</NavLink>
                                         </div> : <NavLink className='text-white font-semibold hover:text-red-400 duration-300 block' to='/my-blogs'>My Blogs</NavLink>}
-                                        <Link to={'/'}><span onClick={logOut} className='text-white'>Log Out</span></Link></div> : <NavLink className='text-white font-semibold hover:text-red-400 duration-300 block' to='/login'>Login</NavLink>}
+                                        <Link to={'/'}><span onClick={logOut} className='text-white border-2 rounded-full p-1 block'>Log Out</span></Link></div> : <NavLink className='text-white font-semibold hover:text-red-400 duration-300 block' to='/login'>Login</NavLink>}
                                 </div>
                             </Disclosure.Panel>
                         </>
