@@ -7,7 +7,7 @@ firebaseInit();
 const useFirebase = () => {
     const [user, setUser] = useState({})
     const [error, setError] = useState("")
-    const [loading, setLoading] = useState(false)
+    const [isLoading, setLoading] = useState(true)
     const [admin, setAdmin] = useState(false)
 
     // get auth 
@@ -82,18 +82,20 @@ const useFirebase = () => {
             .then(data => setAdmin(data.admin))
     }, [user.email])
 
-    // state changed 
+    // state changed
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
-                setUser(user)
+                setUser(user);
+                // dispatch(authUser(user))
             } else {
-                setUser({})
+                setUser({});
+                // dispatch(authUser(user))
             }
-            setLoading(false)
-        })
+            setLoading(false);
+        });
         return () => unSubscribe;
-    }, [auth])
+    }, [auth]);
 
 
     // log Out 
@@ -113,7 +115,7 @@ const useFirebase = () => {
         loginUser,
         googleSignIn,
         logOut,
-        loading,
+        isLoading,
     }
 
 
