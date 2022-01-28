@@ -10,6 +10,7 @@ import Blogs from './pages/Blogs/Blogs';
 import Home from './pages/HomePage/Home/Home';
 import BlogDetails from './pages/HomePage/HomeBlogs/BlogDetails';
 import ManageBlogs from './pages/ManageBlogs/ManageBlogs';
+import UpdateBlog from './pages/ManageBlogs/UpdateBlog';
 import MyBlogs from './pages/MyBlogs/MyBlogs';
 import NotFound from './pages/NotFound/NotFound';
 import PublishAdminBlog from './pages/PublishAdminBlog/PublishAdminBlog';
@@ -30,6 +31,7 @@ function App() {
             <Route path='/blogs' element={<Blogs />} />
             <Route path='/manage-blogs' element={<AdminRoute><ManageBlogs /></AdminRoute>} />
             <Route path='/publish-blog-admin' element={<AdminRoute><PublishAdminBlog /></AdminRoute>} />
+            <Route path='/update/:id' element={<AdminRoute><UpdateBlog /></AdminRoute>} />
             <Route path='/my-blogs' element={<MyBlogs />} />
             <Route path='/make-admin' element={<AdminRoute><MakeAdmin /></AdminRoute>} />
             <Route path='/blog-details/:id' element={<BlogDetails />} />

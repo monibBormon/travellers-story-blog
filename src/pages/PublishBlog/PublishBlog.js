@@ -30,7 +30,7 @@ const PublishBlog = () => {
                         //set blog status
                         data.status = "pending";
                         data.email = user.email;
-                        fetch("https://gentle-brook-35014.herokuapp.com/blogs", {
+                        fetch("http://localhost:5000/blogs", {
                             method: "POST",
                             headers: { "content-type": "application/json" },
                             body: JSON.stringify(data)
@@ -72,7 +72,7 @@ const PublishBlog = () => {
                                     <option value="food">Asia</option>
                                 </select><br />
                                 <textarea className='h-20 pl-3 pt-2 rounded focus:outline-none bg-gray-200 w-full mb-3' placeholder='Enter blog description' {...register("body")}></textarea>
-                                <input type="file" accept="image/*" {...register("image")} /> <br />
+                                <input type="file" accept="image/*" {...register("image", { required: true })} /> <br />
                                 <button className='bg-blue-500 px-12 cursor-pointer mt-3 py-3 text-white font-semibold rounded' type='submit'>Post Blog</button>
                             </form>
                         </div>

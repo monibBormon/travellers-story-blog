@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ManageBlogs = () => {
     const [blogs, setBlogs] = useState([])
@@ -6,17 +7,18 @@ const ManageBlogs = () => {
 
     console.log(blogs)
     useEffect(() => {
-        fetch("https://gentle-brook-35014.herokuapp.com/all-blogs")
+        fetch("http://localhost:5000/all-blogs")
             .then(res => res.json())
             .then(data => {
                 setBlogs(data)
             })
     }, [isDelete])
 
+    // handle status 
     const handleStatus = (id) => {
         const confirmation = window.confirm('Are you sure you want to update status?')
         if (confirmation) {
-            fetch(`https://gentle-brook-35014.herokuapp.com/updateStatus/${id}`, {
+            fetch(`http://localhost:5000/updateStatus/${id}`, {
                 method: 'PUT',
                 headers: { 'content-type': 'application/json' }
             }).then(res => res.json())
@@ -34,7 +36,7 @@ const ManageBlogs = () => {
     const handleStatus1 = (id) => {
         const confirmation = window.confirm('Are you sure you want to update status?')
         if (confirmation) {
-            fetch(`https://gentle-brook-35014.herokuapp.com/updateStatus1/${id}`, {
+            fetch(`http://localhost:5000/updateStatus1/${id}`, {
                 method: 'PUT',
                 headers: { 'content-type': 'application/json' }
             }).then(res => res.json())
@@ -54,7 +56,7 @@ const ManageBlogs = () => {
     const handleDelete = (id) => {
         const confirmation = window.confirm('Are you sure product will be delete parmanently?')
         if (confirmation) {
-            fetch(`https://gentle-brook-35014.herokuapp.com/delete/${id}`, {
+            fetch(`http://localhost:5000/delete/${id}`, {
                 method: 'DELETE',
                 headers: { 'content-type': 'application/json' }
             }).then(res => res.json())
@@ -133,8 +135,11 @@ const ManageBlogs = () => {
                                             </td>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                                 <button className='border-2 mr-2 border-red-500 rounded-full px-2' onClick={() => handleStatus(blog._id)}>approve</button>
-                                                <button className='border-2 mr-2 border-red-500 rounded-full px-2' onClick={() => handleStatus1(blog._id)}>pending</button>
+                                                {/* <button className='border-2 mr-2 border-red-500 rounded-full px-2' onClick={() => handleStatus1(blog._id)}>pending</button> */}
                                                 <button className='border-2 mr-2 border-red-500 rounded-full px-2' onClick={() => handleDelete(blog._id)}>Delete</button>
+                                                <Link to={`/update/${blog._id}`}>
+                                                    <button className='border-2 mr-2 border-red-500 rounded-full px-2'>Edit</button>
+                                                </Link>
                                             </td>
                                         </tr>
                                     ))}

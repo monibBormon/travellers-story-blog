@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import Rating from "react-rating";
+import { FaStar, FaStarHalfAlt } from 'react-icons/fa'
 
 const BlogDetails = () => {
     const { id } = useParams()
     const [blog, setBlog] = useState({})
 
     useEffect(() => {
-        fetch(`https://gentle-brook-35014.herokuapp.com/blogs/${id}`)
+        fetch(`http://localhost:5000/blogs/${id}`)
             .then(res => res.json())
             .then(data => {
                 setBlog(data)
@@ -28,9 +30,20 @@ const BlogDetails = () => {
                                     <span className='text-sm mr-5'><i className="far fa-calendar-alt"></i> {blog.date}</span>
                                     <span className='mr-5'>Location: <span className='font-semibold'>{blog.location}</span></span>
                                     <span className='mr-5'>Tour Cost: <span className='font-semibold'>${blog.cost}</span></span>
-                                    <p className='my-3'>Author: <span className='font-semibold'>{blog.authorName}</span> </p>
+                                    <div className='flex'>
+                                        <p className='my-3'>Author: <span className='font-semibold'>{blog.authorName}</span></p>
+                                        <div className='ml-10 mt-1'>
+                                            <span className='mr-3 mb-1'>Rating:</span>
+                                            <Rating className='mt-1 inline-block'
+                                                emptySymbol={<FaStarHalfAlt className="text-gray-600 text-xl" />}
+                                                fullSymbol={<FaStar className="text-yellow-400 text-xl" />}
+                                                initialRating={`${blog.rating}`}
+                                                readonly
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3 className='text-4xl mb-5'>{blog.title}</h3>
+                                <h3 className='text-4xl mb-5 mt-2'>{blog.title}</h3>
                                 <p className=''>{blog.body}</p>
                             </div>
                         </div>
