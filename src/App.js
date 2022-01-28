@@ -12,6 +12,7 @@ import BlogDetails from './pages/HomePage/HomeBlogs/BlogDetails';
 import ManageBlogs from './pages/ManageBlogs/ManageBlogs';
 import MyBlogs from './pages/MyBlogs/MyBlogs';
 import NotFound from './pages/NotFound/NotFound';
+import PublishAdminBlog from './pages/PublishAdminBlog/PublishAdminBlog';
 import PublishBlog from './pages/PublishBlog/PublishBlog';
 import Footer from './pages/Shared/Footer/Footer';
 import Header from './pages/Shared/Header/Header';
@@ -28,6 +29,7 @@ function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/blogs' element={<Blogs />} />
             <Route path='/manage-blogs' element={<AdminRoute><ManageBlogs /></AdminRoute>} />
+            <Route path='/publish-blog-admin' element={<AdminRoute><PublishAdminBlog /></AdminRoute>} />
             <Route path='/my-blogs' element={<MyBlogs />} />
             <Route path='/make-admin' element={<AdminRoute><MakeAdmin /></AdminRoute>} />
             <Route path='/blog-details/:id' element={<BlogDetails />} />

@@ -4,12 +4,20 @@ import './HomeBlogs.css'
 
 const HomeBlogs = () => {
     const [blogs, setBlogs] = useState([])
+    const [pageCount, setPageCount] = useState(0)
+    const [page, setPage] = useState(0)
 
+    const size = 10
     useEffect(() => {
-        fetch('https://gentle-brook-35014.herokuapp.com/blogs?status=approve')
+        fetch(`http://localhost:5000/blogs?status=approve&&page=${page}&&size=${size}`)
             .then(res => res.json())
-            .then(data => setBlogs(data))
-    }, [])
+            .then(data => {
+                setBlogs(data.result)
+                const count = data.count;
+                const pageNumber = Math.ceil(count / size)
+                setPageCount(pageNumber)
+            })
+    }, [page])
     return (
         <div>
             <div className="container mx-auto pt-8 pb-20 px-5 lg:px-0">
@@ -32,6 +40,11 @@ const HomeBlogs = () => {
                                         </Link>
                                     </div>
                                 </div>)
+                            }
+                        </div>
+                        <div className="pagination">
+                            {
+                                [...Array(pageCount).keys()].map(number => <button key={number} onClick={() => setPage(number)} className={number === page ? 'bg-blue-500 border-2 border-blue-500 text-white text-2xl px-2 mr-2 mt-16 rounded font-semibold' : 'border-2 px-2 mr-2 mt-16 border-blue-500 text-xl rounded font-semibold'}>{number + 1}</button>)
                             }
                         </div>
                     </div>

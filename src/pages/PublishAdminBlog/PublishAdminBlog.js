@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import useFirebase from '../../hooks/useFirebase';
 
 
-const PublishBlog = () => {
+const PublishAdminBlog = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [imageLoading, setimageLoading] = useState(false);
     const { user } = useFirebase()
@@ -28,7 +28,7 @@ const PublishBlog = () => {
                         const imgUrl = upload.data.url
                         data.image = imgUrl
                         //set blog status
-                        data.status = "pending";
+                        data.status = "approve";
                         data.email = user.email;
                         fetch("http://localhost:5000/blogs", {
                             method: "POST",
@@ -62,7 +62,7 @@ const PublishBlog = () => {
                                 <input className='h-10 pl-3 rounded focus:outline-none bg-gray-200 w-full mb-3' type={'number'} {...register("cost", { required: true })} placeholder='Enter Tour cost' /> <br />
                                 <input className='h-10 pl-3 rounded focus:outline-none bg-gray-200 w-full mb-3' type={'date'} {...register("date", { required: true })} placeholder='Enter Tour Date' /> <br />
                                 <input className='h-10 pl-3 rounded focus:outline-none bg-gray-200 w-full mb-3' {...register("authorName", { required: true })} placeholder='Enter Author Name' /> <br />
-                                <input className='h-10 pl-3 rounded focus:outline-none bg-gray-200 w-full mb-3' type={'number'} maxLength={'1'} {...register("rating", { required: true })} placeholder='Give your rating' /> <br />
+                                <input className='h-10 pl-3 rounded focus:outline-none bg-gray-200 w-full mb-3' type={'number'} max={'5'} {...register("rating", { required: true })} placeholder='Give your rating' /> <br />
                                 <label>Select Category:</label>
                                 <select className='mb-5' {...register("category")}>
                                     <option value="travel">Travel</option>
@@ -83,4 +83,4 @@ const PublishBlog = () => {
     );
 };
 
-export default PublishBlog;
+export default PublishAdminBlog;
