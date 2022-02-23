@@ -19,7 +19,7 @@ const UpdateBlog = () => {
     const onSubmit = data => {
 
         console.log(data)
-        fetch(`https://gentle-brook-35014.herokuapp.com/update/${id}`, {
+        /* fetch(`https://gentle-brook-35014.herokuapp.com/update/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data)
@@ -29,7 +29,7 @@ const UpdateBlog = () => {
                     alert("Blog Updated Successfully")
                     reset()
                 }
-            })
+            }) */
 
     }
     return (

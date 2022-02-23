@@ -15,21 +15,21 @@ const Footer = () => {
                         <div className=''>
                             <div className='flex justify-center mb-5'>
                                 <div className='mr-5'>
-                                    <i className="fab fa-facebook text-2xl"></i>
+                                    <i className="fab fa-facebook text-2xl cursor-pointer duration-300 transition-all hover:text-blue-600 transform hover:scale-125"></i>
                                     <p>Facebook</p>
                                 </div>
                                 <div>
-                                    <i className="fab fa-twitter text-2xl"></i>
+                                    <i className="fab fa-twitter text-2xl cursor-pointer duration-300 transition-all hover:text-blue-600 transform hover:scale-125"></i>
                                     <p>Twitter</p>
                                 </div>
                             </div>
                             <div className='flex justify-center'>
                                 <div className='mr-5'>
-                                    <i className="fab fa-google text-2xl"></i>
+                                    <i className="fab fa-google text-2xl cursor-pointer duration-300 transition-all hover:text-blue-600 transform hover:scale-125"></i>
                                     <p>Google</p>
                                 </div>
                                 <div>
-                                    <i className="fab fa-youtube text-2xl"></i>
+                                    <i className="fab fa-youtube text-2xl cursor-pointer duration-300 transition-all hover:text-blue-600 transform hover:scale-125"></i>
                                     <p>Youtube</p>
                                 </div>
                             </div>
