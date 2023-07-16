@@ -30,7 +30,7 @@ const PublishBlog = () => {
                         //set blog status
                         data.status = "pending";
                         data.email = user.email;
-                        fetch("https://gentle-brook-35014.herokuapp.com/blogs", {
+                        fetch("https://travellers-story-server.vercel.app/blogs", {
                             method: "POST",
                             headers: { "content-type": "application/json" },
                             body: JSON.stringify(data)

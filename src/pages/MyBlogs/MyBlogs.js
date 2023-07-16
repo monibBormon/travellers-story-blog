@@ -8,7 +8,7 @@ const MyBlogs = () => {
 
     console.log(blogs);
     useEffect(() => {
-        fetch(`https://gentle-brook-35014.herokuapp.com/myBlogs?email=${user.email}`)
+        fetch(`https://travellers-story-server.vercel.app/myBlogs?email=${user.email}`)
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, [isDelete, user.email])
@@ -17,7 +17,7 @@ const MyBlogs = () => {
     const handleDelete = (id) => {
         const confirmation = window.confirm('Are you sure product will be delete parmanently?')
         if (confirmation) {
-            fetch(`https://gentle-brook-35014.herokuapp.com/delete/${id}`, {
+            fetch(`https://travellers-story-server.vercel.app/delete/${id}`, {
                 method: 'DELETE',
                 headers: { 'content-type': 'application/json' }
             }).then(res => res.json())

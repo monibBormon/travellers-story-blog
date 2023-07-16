@@ -1,20 +1,28 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+
+import Home from './pages/HomePage/Home/Home';
 import AuthProvider from './context/AuthProvider';
-import AdminRoute from './pages/Authentication/AdminRoute/AdminRoute';
+
+// Authetocation Route
 import Login from './pages/Authentication/Login/Login';
-import MakeAdmin from './pages/Authentication/MakeAdmin/MakeAdmin';
 import PrivateRoute from './pages/Authentication/PrivateRoute/PrivateRoute';
 import Register from './pages/Authentication/Register/Register';
+
 import Blogs from './pages/Blogs/Blogs';
-import Home from './pages/HomePage/Home/Home';
-import BlogDetails from './pages/HomePage/HomeBlogs/BlogDetails';
-import ManageBlogs from './pages/ManageBlogs/ManageBlogs';
-import UpdateBlog from './pages/ManageBlogs/UpdateBlog';
 import MyBlogs from './pages/MyBlogs/MyBlogs';
 import NotFound from './pages/NotFound/NotFound';
-import PublishAdminBlog from './pages/PublishAdminBlog/PublishAdminBlog';
 import PublishBlog from './pages/PublishBlog/PublishBlog';
+import BlogDetails from './pages/HomePage/HomeBlogs/BlogDetails';
+
+// Admin route 
+import AdminRoute from './pages/Authentication/AdminRoute/AdminRoute';
+import MakeAdmin from './pages/Authentication/MakeAdmin/MakeAdmin';
+import ManageBlogs from './pages/ManageBlogs/ManageBlogs';
+import UpdateBlog from './pages/ManageBlogs/UpdateBlog';
+import PublishAdminBlog from './pages/PublishAdminBlog/PublishAdminBlog';
+
+// shared route 
 import Footer from './pages/Shared/Footer/Footer';
 import Header from './pages/Shared/Header/Header';
 

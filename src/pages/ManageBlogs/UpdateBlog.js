@@ -9,7 +9,7 @@ const UpdateBlog = () => {
     const [blog, setBlog] = useState({})
 
     useEffect(() => {
-        fetch(`https://gentle-brook-35014.herokuapp.com/blogs/${id}`)
+        fetch(`https://travellers-story-server.vercel.app/blogs/${id}`)
             .then(res => res.json())
             .then(data => {
                 setBlog(data)
@@ -19,7 +19,7 @@ const UpdateBlog = () => {
     const onSubmit = data => {
 
         console.log(data)
-        /* fetch(`https://gentle-brook-35014.herokuapp.com/update/${id}`, {
+        /* fetch(`https://travellers-story-server.vercel.app/update/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data)

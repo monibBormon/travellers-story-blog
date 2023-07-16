@@ -65,7 +65,7 @@ const useFirebase = () => {
     // save user to database 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName }
-        fetch('https://gentle-brook-35014.herokuapp.com/users', {
+        fetch('https://travellers-story-server.vercel.app/users', {
             method: method,
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(user)
@@ -74,10 +74,10 @@ const useFirebase = () => {
                 // console.log(data)
             })
     }
-
+    // https://travellers-story-server.vercel.app/
     // get admin user from database 
     useEffect(() => {
-        fetch(`https://gentle-brook-35014.herokuapp.com/users/${user.email}`)
+        fetch(`https://travellers-story-server.vercel.app/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])

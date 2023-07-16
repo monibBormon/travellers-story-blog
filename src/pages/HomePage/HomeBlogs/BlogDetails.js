@@ -8,7 +8,7 @@ const BlogDetails = () => {
     const [blog, setBlog] = useState({})
 
     useEffect(() => {
-        fetch(`https://gentle-brook-35014.herokuapp.com/blogs/${id}`)
+        fetch(`https://travellers-story-server.vercel.app/blogs/${id}`)
             .then(res => res.json())
             .then(data => {
                 setBlog(data)

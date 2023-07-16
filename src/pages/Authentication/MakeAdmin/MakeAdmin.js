@@ -6,7 +6,7 @@ const MakeAdmin = () => {
     const [success, setSuccess] = useState(false);
 
     const onSubmit = data => {
-        fetch('https://gentle-brook-35014.herokuapp.com/users/admin', {
+        fetch('https://travellers-story-server.vercel.app/users/admin', {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
